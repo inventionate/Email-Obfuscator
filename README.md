@@ -12,7 +12,7 @@ A text filter for automatic email obfuscation using the well-established Javascr
 	- [Common installation step](#common-installation-step)
 	- Platform specific steps & usage
 		- [Standalone](#standalone)
-		- [Laravel](#laravel)
+		- [Laravel 5](#laravel-5)
 		- [Twig](#twig)
 - [Call for integrations](#call-for-integrations)
 - [Credits](#credits)
@@ -46,7 +46,7 @@ Include the `src/Obfuscator.php` file somewhere in your project:
 
 Parse and obfuscate a string by using the `obfuscateEmail($string)` function.
 
-#### Laravel
+#### Laravel 5
 
 You have 3 options depending on your use case:
 
