@@ -6,6 +6,9 @@
  */
 function obfuscateEmail($string)
 {
+	// Casting the string variable to a ... string allows passing of objects implementing the __toString() magic method.
+	$string = (string) $string;
+	
 	$patterns = array(
 			'|\<a([^>]+)href\=\"mailto\:([^">]+)\"([^>]*)\>(.*?)\<\/a\>|ism', // mailto anchors
 			'|[_a-z0-9-]+(?:\.[_a-z0-9-]+)*@[a-z0-9-]+(?:\.[a-z0-9-]+)*(?:\.[a-z]{2,3})|i', // plain emails
