@@ -55,7 +55,7 @@ You have 3 options depending on your use case:
         protected $middleware = [
     		'Illuminate\Foundation\Http\Middleware\CheckForMaintenanceMode',
     		...
-    		'Propaganistas\Email-Obfuscator\src\Laravel\Middleware',
+    		'Propaganistas\EmailObfuscator\src\Laravel\Middleware',
     	];
 
 - If you only want to have specific controller methods return obfuscated email addresses, add Middleware class to the `$routeMiddleware` array in `App\Http\Middleware\Kernel.php`:
@@ -63,7 +63,7 @@ You have 3 options depending on your use case:
         protected $routeMiddleware = [
     		'guest' => 'App\Http\Middleware\RedirectIfAuthenticated',
     		...
-    		'obfuscate' => 'Propaganistas\Email-Obfuscator\src\Laravel\Middleware',
+    		'obfuscate' => 'Propaganistas\EmailObfuscator\src\Laravel\Middleware',
     	];
 
     and apply controller middleware as usual in a controller's construct method or route definition:
@@ -84,7 +84,7 @@ Add the extension to the `Twig_Environment`:
 
 ```php
 $twig = new Twig_Environment(...);
-$twig->addExtension(new \Propaganistas\Email-Obfuscator\Twig\Extension());
+$twig->addExtension(new \Propaganistas\EmailObfuscator\Twig\Extension());
 ```
 
 The extension exposes an `obfuscateEmail` Twig filter, which can be applied to any string.
