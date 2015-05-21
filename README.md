@@ -10,7 +10,7 @@ A text filter for automatic email obfuscation using the well-established Javascr
 
 - Installation
 	- [Common installation step](#common-installation-step)
-	- Platform specific steps & usage
+	- [Platform specific steps & usage](#platform-specific-steps--usage)
 		- [Standalone](#standalone)
 		- [Laravel 5](#laravel-5)
 		- [Twig](#twig)
