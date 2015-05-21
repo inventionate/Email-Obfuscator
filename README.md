@@ -14,7 +14,7 @@ A text filter for automatic email obfuscation using the well-established Javascr
 		- [Standalone](#standalone)
 		- [Laravel 5](#laravel-5)
 		- [Twig](#twig)
-- [Call for integrations](#call-for-integrations)
+	- [Your platform not listed here?](#your-platform-not-listed-here-aka-go-go-community)
 - [Credits](#credits)
 
 ### Common installation step
@@ -75,7 +75,7 @@ You have 3 options depending on your use case:
     }
     ```
 
-- If you want apply obfuscation on only specific strings, just use the `obfuscateEmail($string)` function.
+- If you want to apply obfuscation only on specific strings, just use the `obfuscateEmail($string)` function.
 
 
 #### Twig
@@ -94,10 +94,14 @@ The extension exposes an `obfuscateEmail` Twig filter, which can be applied to a
 {{ variable|obfuscateEmail }}
 ```
 
-## Call for integrations
+### Your platform not listed here? (aka "Go go community!")
 
-If you made an integration bundle/extension/package for a specific framework or CMS, please open a pull request.
+Well, feel free to hop in and create an integration yourself! If you have made an integration bundle/extension/package for a specific framework or CMS, please:
 
+- Fork the project
+- Place the necessary files in a correspondingly named folder in `src/`
+- Supply a README entry
+- Open up a pull request
 
 ## Credits
 
