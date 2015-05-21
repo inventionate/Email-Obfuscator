@@ -8,14 +8,16 @@ A text filter for automatic email obfuscation using the well-established Javascr
 
 ## Contents
 
-- Installation
+- [Installation & usage](#installation--usage)
 	- [Common installation step](#common-installation-step)
-	- [Platform specific steps & usage](#platform-specific-steps--usage)
+	- [Additional platform specific steps](#additional-platform-specific-steps)
 		- [Standalone](#standalone)
 		- [Laravel 5](#laravel-5)
 		- [Twig](#twig)
 	- [Your platform not listed here?](#your-platform-not-listed-here-aka-go-go-community)
 - [Credits](#credits)
+
+## Installation & usage
 
 ### Common installation step
 
@@ -32,7 +34,7 @@ And finally include the supplied Javascript file (`assets/EmailObfuscator.js`) s
 
     https://cdn.rawgit.com/Propaganistas/Email-Obfuscator/master/assets/EmailObfuscator.js
 
-### Platform specific steps & usage
+### Additional Platform specific steps
 
 - [Standalone](#standalone)
 - [Laravel 5](#laravel)
