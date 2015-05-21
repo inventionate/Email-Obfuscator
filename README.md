@@ -35,7 +35,7 @@ And finally include the supplied Javascript file (`assets/EmailObfuscator.js`) s
 ### Platform specific steps & usage
 
 - [Standalone](#standalone)
-- [Laravel](#laravel)
+- [Laravel 5](#laravel)
 - [Twig](#twig)
 
 #### Standalone
