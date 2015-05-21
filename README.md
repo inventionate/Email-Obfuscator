@@ -42,7 +42,9 @@ And finally include the supplied Javascript file (`assets/EmailObfuscator.js`) s
 
 Include the `src/Obfuscator.php` file somewhere in your project:
 
-    require_once 'PATH_TO_LIBRARY/src/Obfuscator.php';
+```php
+require_once 'PATH_TO_LIBRARY/src/Obfuscator.php';
+```
 
 Parse and obfuscate a string by using the `obfuscateEmail($string)` function.
 
@@ -52,20 +54,24 @@ You have 3 options depending on your use case:
 
 - (recommended) If you want to obfuscate all email addresses that Laravel ever outputs, add the Middleware class to the `$middleware` array in `App\Http\Middleware\Kernel.php`:
 
-        protected $middleware = [
-    		'Illuminate\Foundation\Http\Middleware\CheckForMaintenanceMode',
-    		...
-    		'Propaganistas\EmailObfuscator\Laravel\Middleware',
-    	];
+    ```php
+    protected $middleware = [
+        'Illuminate\Foundation\Http\Middleware\CheckForMaintenanceMode',
+    	    ...
+    	'Propaganistas\EmailObfuscator\Laravel\Middleware',
+    ];
+    ```
 
 - If you only want to have specific controller methods return obfuscated email addresses, add the Middleware class to the `$routeMiddleware` array in `App\Http\Middleware\Kernel.php`:
-
-        protected $routeMiddleware = [
-    		'guest' => 'App\Http\Middleware\RedirectIfAuthenticated',
-    		...
-    		'obfuscate' => 'Propaganistas\EmailObfuscator\Laravel\Middleware',
-    	];
-
+    
+    ```php
+    protected $routeMiddleware = [
+    	'guest' => 'App\Http\Middleware\RedirectIfAuthenticated',
+    	...
+    	'obfuscate' => 'Propaganistas\EmailObfuscator\Laravel\Middleware',
+    ];
+    ```
+    
     and apply controller middleware as usual in a controller's construct method or route definition:
 
     ````php
