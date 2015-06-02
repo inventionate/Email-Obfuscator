@@ -111,6 +111,8 @@ Well, feel free to hop in and create an integration yourself! If you have made a
 - Supply a README entry
 - Open up a pull request
 
+If your platform enforces a strict package structure, create a repository and submit a pull request supplying only a README entry pointing to your repository.
+
 ## Credits
 
 * [Scott Yang](http://scott.yang.id.au/2003/06/obfuscate-email-address-with-javascript-rot13) - For the Javascript used in this method.
