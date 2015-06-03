@@ -12,10 +12,17 @@ function obfuscateEmail($string)
 	// Safeguard string.
 	$safeguard = '$%$!!$%$';
 
-	// Safeguard input fields containing email addresses.
-	$string = preg_replace_callback('/<input .*@.*>/', function ($matches) use ($safeguard) {
-		return str_replace('@', $safeguard, $matches[0]);
-	}, $string);
+    // Safeguard several stuff before parsing.
+    $prevent = array(
+        '|<input .*@.*>|is', // <input>
+        '|(<head(?:[^>]*)>)(.*?)(</head>)|is', // <head>
+        '|(<script(?:[^>]*)>)(.*?)(</script>)|is', // <script>
+    );
+    foreach ($prevent as $pattern) {
+        $string = preg_replace_callback($pattern, function ($matches) use ($safeguard) {
+            return str_replace('@', $safeguard, $matches[0]);
+        }, $string);
+    }
 
 	// Define patterns for extracting emails.
 	$patterns = array(
