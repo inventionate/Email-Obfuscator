@@ -6,9 +6,13 @@
  */
 function obfuscateEmail($string)
 {
-	// Casting the string variable to a ... string allows passing of objects implementing the __toString() magic method.
+	// Casting $string to a string allows passing of objects implementing the __toString() magic method.
 	$string = (string) $string;
-	
+
+	// Safeguard string.
+	$safeguard = '$%$!!$%$';
+
+	// Define patterns for extracting emails.
 	$patterns = array(
 			'|\<a([^>]+)href\=\"mailto\:([^">]+)\"([^>]*)\>(.*?)\<\/a\>|ism', // mailto anchors
 			'|[_a-z0-9-]+(?:\.[_a-z0-9-]+)*@[a-z0-9-]+(?:\.[a-z0-9-]+)*(?:\.[a-z]{2,3})|i', // plain emails
@@ -33,10 +37,10 @@ function obfuscateEmail($string)
 			}
 			$nojs = '<noscript><span style="unicode-bidi:bidi-override;direction:rtl;">' . strrev($nojs) . '</span></noscript>';
 
-			// Safeguard the obfuscation using a placeholder so it won't get picked up by the next iteration.
-			return str_replace('@', '$%$!!$%$', $js . $nojs);
+			// Safeguard the obfuscation so it won't get picked up by the next iteration.
+			return str_replace('@', $safeguard, $js . $nojs);
 		}, $string);
 	}
 
-	return str_replace('$%$!!$%$', '@', $string);
+	return str_replace($safeguard, '@', $string);
 }
