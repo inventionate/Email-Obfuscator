@@ -12,6 +12,11 @@ function obfuscateEmail($string)
 	// Safeguard string.
 	$safeguard = '$%$!!$%$';
 
+	// Safeguard input fields containing email addresses.
+	$string = preg_replace_callback('/<input .*@.*>/', function ($matches) {
+		return str_replace('@', $safeguard, $matches[0]);
+	}, $string);
+
 	// Define patterns for extracting emails.
 	$patterns = array(
 			'|\<a([^>]+)href\=\"mailto\:([^">]+)\"([^>]*)\>(.*?)\<\/a\>|ism', // mailto anchors
@@ -42,5 +47,6 @@ function obfuscateEmail($string)
 		}, $string);
 	}
 
+	// Revert all safeguards.
 	return str_replace($safeguard, '@', $string);
 }
