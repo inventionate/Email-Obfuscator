@@ -13,7 +13,7 @@ function obfuscateEmail($string)
 	$safeguard = '$%$!!$%$';
 
 	// Safeguard input fields containing email addresses.
-	$string = preg_replace_callback('/<input .*@.*>/', function ($matches) {
+	$string = preg_replace_callback('/<input .*@.*>/', function ($matches) use ($safeguard) {
 		return str_replace('@', $safeguard, $matches[0]);
 	}, $string);
 
@@ -24,7 +24,7 @@ function obfuscateEmail($string)
 	);
 
 	foreach ($patterns as $pattern) {
-		$string = preg_replace_callback($pattern, function ($parts) {
+		$string = preg_replace_callback($pattern, function ($parts) use ($safeguard) {
 			// Filter out empty array elements and reset keys.
 			$parts = array_values(array_filter(array_map('trim', $parts)));
 
