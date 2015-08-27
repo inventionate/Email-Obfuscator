@@ -58,9 +58,9 @@ You have 3 options depending on your use case:
 
     ```php
     protected $middleware = [
-        'Illuminate\Foundation\Http\Middleware\CheckForMaintenanceMode',
+        \Illuminate\Foundation\Http\Middleware\CheckForMaintenanceMode::class,
     	    ...
-    	'Propaganistas\EmailObfuscator\Laravel\Middleware',
+    	\Propaganistas\EmailObfuscator\Laravel\Middleware::class,
     ];
     ```
 
@@ -68,9 +68,9 @@ You have 3 options depending on your use case:
     
     ```php
     protected $routeMiddleware = [
-    	'guest' => 'App\Http\Middleware\RedirectIfAuthenticated',
+    	'guest' => \App\Http\Middleware\RedirectIfAuthenticated::class,
     	...
-    	'obfuscate' => 'Propaganistas\EmailObfuscator\Laravel\Middleware',
+    	'obfuscate' => \Propaganistas\EmailObfuscator\Laravel\Middleware::class,
     ];
     ```
     
