@@ -25,7 +25,7 @@ Add the library to `composer.json`:
 
 ```json
 "require": {
-    "propaganistas/email-obfuscator": "~.1.0",
+    "propaganistas/email-obfuscator": "~1.0",
 }
 
 ```
