@@ -3,9 +3,8 @@
 use Closure;
 use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Http\Response;
-use Illuminate\Contracts\Routing\Middleware as MiddlewareContract;
 
-class Middleware implements MiddlewareContract
+class Middleware
 {
 
     /**
