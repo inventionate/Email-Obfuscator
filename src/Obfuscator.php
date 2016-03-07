@@ -26,14 +26,14 @@ function obfuscateEmail($string)
 
     // Define patterns for extracting emails.
     $patterns = array(
-        '|\<a([^>]+)href\=\"mailto\:([^">?]+)(\?[^?">]+)?\"([^>]*)\>(.*?)\<\/a\>|ism', // mailto anchors
+        '|\<a[^>]+href\=\"mailto\:([^">?]+)(\?[^?">]+)?\"[^>]*\>(.*?)\<\/a\>|ism', // mailto anchors
         '|[_a-z0-9-]+(?:\.[_a-z0-9-]+)*@[a-z0-9-]+(?:\.[a-z0-9-]+)*(?:\.[a-z]{2,3})|i', // plain emails
     );
 
     foreach ($patterns as $pattern) {
         $string = preg_replace_callback($pattern, function ($parts) use ($safeguard) {
-            // Filter out empty array elements and reset keys.
-            $parts = array_values(array_filter(array_map('trim', $parts)));
+            // Clean up element parts.
+            $parts = array_map('trim', $parts);
 
             // ROT13 implementation for JS-enabled browsers
             $js = '<script type="text/javascript">Rot13.write(' . "'" . str_rot13($parts[0]) . "'" . ');</script>';
@@ -41,7 +41,7 @@ function obfuscateEmail($string)
             // Reversed direction implementation for non-JS browsers
             if (stripos($parts[0], '<a') === 0) {
                 // Mailto tag; if link content equals the email, just display the email, otherwise display a formatted string.
-                $nojs = ($parts[1] == $parts[3]) ? $parts[1] : ($parts[3] . ' > ' . $parts[1] . ' <');
+                $nojs = ($parts[1] == $parts[3]) ? $parts[1] : (' > ' . $parts[1] . ' < ' . $parts[3]);
             } else {
                 // Plain email; display the plain email.
                 $nojs = $parts[0];
