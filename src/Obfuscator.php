@@ -15,6 +15,7 @@ function obfuscateEmail($string)
     // Safeguard several stuff before parsing.
     $prevent = array(
         '|<input [^>]*@[^>]*>|is', // <input>
+        '|(<textarea(?:[^>]*)>)(.*?)(</textarea>)|is', // <textarea>
         '|(<head(?:[^>]*)>)(.*?)(</head>)|is', // <head>
         '|(<script(?:[^>]*)>)(.*?)(</script>)|is', // <script>
     );
