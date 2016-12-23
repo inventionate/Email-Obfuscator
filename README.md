@@ -32,7 +32,7 @@ Add the library to `composer.json`:
 
 And finally include the supplied Javascript file (`assets/EmailObfuscator.js`) somewhere in your template. Publish the file yourself or use the following CDN link (no uptime guaranteed):
 
-    https://cdn.rawgit.com/Propaganistas/Email-Obfuscator/master/assets/EmailObfuscator.js
+    https://cdn.rawgit.com/Propaganistas/Email-Obfuscator/master/assets/EmailObfuscator.min.js
 
 ### Additional Platform specific steps
 
