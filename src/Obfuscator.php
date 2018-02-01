@@ -28,7 +28,7 @@ function obfuscateEmail($string)
     // Define patterns for extracting emails.
     $patterns = array(
         '|\<a[^>]+href\=\"mailto\:([^">?]+)(\?[^?">]+)?\"[^>]*\>(.*?)\<\/a\>|ism', // mailto anchors
-        '|[_a-z0-9-]+(?:\.[_a-z0-9-]+)*@[a-z0-9-]+(?:\.[a-z0-9-]+)*(?:\.[a-z]{2,3})|i', // plain emails
+        '|[_a-z0-9-]+(?:\.[_a-z0-9-]+)*@[a-z0-9-]+(?:\.[a-z0-9-]+)*(?:\.[a-z]{2,3})(?=[^>]*(<|$))|i', // plain emails
     );
 
     foreach ($patterns as $pattern) {
