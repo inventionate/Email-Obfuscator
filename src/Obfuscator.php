@@ -37,7 +37,7 @@ function obfuscateEmail($string)
             $parts = array_map('trim', $parts);
 
             // ROT13 implementation for JS-enabled browsers
-            $js = '<script>Rot13.write(' . "'" . str_rot13($parts[0]) . "'" . ');</script>';
+            $js = '<script nonce="' . csp_nonce() . '">Rot13.write(' . "'" . str_rot13($parts[0]) . "'" . ');</script>';
 
             // Reversed direction implementation for non-JS browsers
             if (stripos($parts[0], '<a') === 0) {
