@@ -1,6 +1,6 @@
 {
   "name": "inventionate/email-obfuscator",
-  "description": "Provides an email obfuscator for use in various platforms.",
+  "description": "Provides an email obfuscator for use in Laravel.",
   "keywords": [
     "laravel",
     "twig",
@@ -21,7 +21,7 @@
   },
   "autoload": {
     "psr-4": {
-      "Propaganistas\\EmailObfuscator\\": "src/"
+      "Inventionate\\EmailObfuscator\\": "src/"
     },
     "files": [
       "src/Obfuscator.php"
