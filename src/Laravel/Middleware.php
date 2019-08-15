@@ -1,4 +1,4 @@
-<?php namespace Propaganistas\EmailObfuscator\Laravel;
+<?php namespace Inventionate\EmailObfuscator\Laravel;
 
 use Closure;
 use Illuminate\Contracts\Support\Renderable;
