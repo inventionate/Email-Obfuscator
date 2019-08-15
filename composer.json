@@ -1,5 +1,5 @@
 {
-  "name": "propaganistas/email-obfuscator",
+  "name": "inventionate/email-obfuscator",
   "description": "Provides an email obfuscator for use in various platforms.",
   "keywords": [
     "laravel",
@@ -12,8 +12,8 @@
   "license": "MIT",
   "authors": [
     {
-      "name": "Propaganistas",
-      "email": "Propaganistas@users.noreply.github.com"
+      "name": "Inventionate",
+      "email": "f.mundt@inventionate.de"
     }
   ],
   "require": {
